@@ -40,7 +40,7 @@ What went wrong / was challenging, how'd you figure it out, and what did you lea
 
 Get a 180° micro servo to slowly sweep back and forth between 0 and 180°.
 
-```python
+"""CircuitPython Essentials Servo standard servo example"""
 import time
 import board
 import pwmio
@@ -53,13 +53,12 @@ pwm = pwmio.PWMOut(board.A2, duty_cycle=2 ** 15, frequency=50)
 my_servo = servo.Servo(pwm)
 
 while True:
-    for angle in range(0, 180, 5):  # 0 - 180 degrees, 5 degrees at a time.
+    for angle in range(20, 120, 5):  # 0 - 180 degrees, 5 degrees at a time.
         my_servo.angle = angle
         time.sleep(0.05)
-    for angle in range(180, 0, -5): # 180 - 0 degrees, 5 degrees at a time.
+    for angle in range(120, 20, -5): # 180 - 0 degrees, 5 degrees at a time.
         my_servo.angle = angle
         time.sleep(0.05)
-
 ```
 
 ### Evidence
